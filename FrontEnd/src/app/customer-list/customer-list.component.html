@@ -1,0 +1,120 @@
+<div class="container" style="margin-top: 2rem">
+
+<!-- <input class="form-control" type="text" placeholder="&#61442; Search customer name here"
+   [(ngModel)]="searchTerm"> -->
+
+   <div class="search-customer">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" 
+    autocomplete="off" placeholder="Search here">
+</div>
+
+<!-- <th class="pointer" (click)="sort('CategoryID')"> // category Id <th class="pointer" (click)="sort('CategoryName')" > // Category Name <th class="pointer" (click)="sort('Description')" >  // Description    -->
+
+ 
+<br/>
+<mat-slide-toggle formControlName="enableWifi" [checked]="useDefault" (change)="toggle($event)" >Sort list (Date-wise) </mat-slide-toggle>
+
+
+    <div class="card" *ngFor="let customer of customerArr  | filter:searchText | orderBy: {property: column, direction: direction}" style="margin-top: 1.5rem">
+        <div class="card-body">
+            <div class="col-lg-10">
+                <div class="row verticla-align">
+                    <div class="col-lg-4 col-xs-4">
+                        <img class="imageClass" [src]="customer.photo"
+                        onerror="this.src='./assets/defualt.png';" />
+                    </div>
+                    <div class=" col-lg-8 col-xs-8">
+
+                        <div class="row">
+                            <div class="col-lg-6 col-xs-6">
+                                Name
+                            </div>
+                            <div class="col-lg-6 col-xs-6">
+                                : {{customer.name}}
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                Gender
+                            </div>
+                            <div class="col-lg-6">
+                                : {{customer.gender}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                Address
+                            </div>
+                            <div class="col-lg-6">
+                                : {{customer.address}}
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                City
+                            </div>
+                            <div class="col-lg-6">
+                                : {{customer.city}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                State
+                            </div>
+                            <div class="col-lg-6">
+                                : {{customer.state}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                Country
+                            </div>
+                            <div class="col-lg-6">
+                                : {{customer.country}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                Hobbies
+                            </div>
+                            <div class="col-lg-6">
+                                : {{customer.hobbies}}
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                Created on
+                            </div>
+                            <div class="col-lg-6">
+                                : {{customer.date | date:'medium'}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="button" class="btn btn-primary"  (click)="editCustomer(customer)"
+                    style="margin-right: 15px;">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="openDialog(customer._id)">Delete</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>

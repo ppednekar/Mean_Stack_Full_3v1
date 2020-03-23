@@ -1,0 +1,22 @@
+.imageClass {
+    height: 200px;
+    width: 200px;
+}
+.verticla-align{
+    display: flex;
+    align-items: center;
+}
+.btn {
+    width: 100px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+
+  .pointer{
+    cursor: pointer;
+    display: block;
+}
+  
