@@ -1,33 +1,26 @@
-
 <nav class="navbar navbar-expand-md navbar navbar-light" style="background-color: #0d73bd;">
-  <a class="navbar-brand" routerLink="" style="color: white;"><img class="logoimg" src="assets/logo.png"> Customer App</a>
+  <a class="navbar-brand" routerLink="" style="color: white;"><img class="logoimg" src="assets/logo.png"> Customer
+    App</a>
   <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
 
-      <!-- <ul class=" navbar-nav mr-auto">
-          <li class="nav-item active">
-              <a class="nav-link" routerLink="" routerLinkActive="active" style="color: white;">Customer List</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="edit/0" routerLinkActive="is-active" style="color: white;">Create Customer</a>
-          </li>
-      
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a class="nav-link" routerLinkActive="list" [routerLinkActiveOptions]="{exact: true}"
+          routerLink="/customerlist" style="color: white;">Customer List</a></li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="create" [routerLinkActiveOptions]="{exact: true}"
+          routerLink="edit/0" style="color: white;">Create Customer</a></li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="list" [routerLinkActiveOptions]="{exact: true}"
+          routerLink="/aboutus" style="color: white;">About Us</a></li>
 
-      </ul>  -->
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a class="nav-link" routerLinkActive="list" [routerLinkActiveOptions]="{exact: true}" routerLink="/customerlist" style="color: white;">Customer List</a></li>
-        <li class="nav-item"><a class="nav-link"  routerLinkActive="create" [routerLinkActiveOptions]="{exact: true}" routerLink="edit/0" style="color: white;">Create Customer</a></li>
-       
-</ul>
+    </ul>
 
   </div>
 
 </nav>
 
-<div >
+<div>
   <router-outlet></router-outlet>
 </div>
