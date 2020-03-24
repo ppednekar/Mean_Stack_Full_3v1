@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
   { path : '', redirectTo: '/customerlist', pathMatch: 'full'}, //pathMatch: 'full' signifies that the complete URL path requires to be matched and is utilized by the route matching mechanism.
+  //{ path : 'home', component: HomeComponent},
   { path : 'customerlist', component: CustomerListComponent},
   { path : 'edit/:id', component: CreateCustomerComponent},
+  { path: 'aboutus', loadChildren: () => import('./aboutus/aboutus.module').then(m => m.AboutusModule) },
   { path: '**', component: NoPageFoundComponent }
 ];
 
